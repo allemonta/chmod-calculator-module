@@ -1,0 +1,61 @@
+{
+  "name": "chmod-calculator",
+  "version": "0.0.1",
+  "description": "A simple chmod calculator and parser",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "clean": true,
+    "dts": true,
+    "treeshake": true
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsup",
+    "test": "mocha -r tsx \"test/**.ts\""
+  },
+  "keywords": [
+    "chmod"
+  ],
+  "author": "Alessandro Montanari <alessandro.montanari7@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allemonta/chmod-calculator-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/allemonta/chmod-calculator-module/issues"
+  },
+  "homepage": "https://github.com/allemonta/chmod-calculator-module#readme",
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "tsup": "^7.2.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  }
+}
